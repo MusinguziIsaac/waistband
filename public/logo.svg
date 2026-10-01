@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 480" width="100%" height="100%">
+  <defs>
+    <!-- Glowing Neon Filters -->
+    <filter id="green-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="intense-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur1" />
+      <feGaussianBlur stdDeviation="4" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- 3D Gradients -->
+    <linearGradient id="neon-green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="50%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+
+    <linearGradient id="text-3d-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#86efac" />
+      <stop offset="40%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+
+    <style>
+      .title-3d {
+        font-family: Impact, Arial Black, system-ui, sans-serif;
+        font-weight: 900;
+        font-size: 38px;
+        fill: url(#text-3d-grad);
+        stroke: #ffffff;
+        stroke-width: 2px;
+        paint-order: stroke fill;
+        filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.8));
+        letter-spacing: 1px;
+      }
+      .sub-3d {
+        font-family: system-ui, -apple-system, sans-serif;
+        font-weight: 900;
+        font-size: 21px;
+        fill: url(#text-3d-grad);
+        stroke: #ffffff;
+        stroke-width: 1.5px;
+        paint-order: stroke fill;
+        filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.7));
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+
+  <!-- 3D Glowing Globe & WiFi Symbol -->
+  <g transform="translate(250, 175) scale(1.35)" filter="url(#intense-glow)">
+    <!-- WiFi Signal Arcs -->
+    <path d="M 12 -44 A 48 48 0 0 1 58 0" stroke="url(#neon-green-grad)" stroke-width="10" stroke-linecap="round" fill="none" />
+    <path d="M 12 -30 A 34 34 0 0 1 43 0" stroke="url(#neon-green-grad)" stroke-width="8.5" stroke-linecap="round" fill="none" />
+    <path d="M 12 -16 A 20 20 0 0 1 28 0" stroke="url(#neon-green-grad)" stroke-width="7" stroke-linecap="round" fill="none" />
+
+    <!-- WiFi Outer Highlight -->
+    <path d="M 12 -44 A 48 48 0 0 1 58 0" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+
+    <!-- 3D Globe Mesh -->
+    <ellipse cx="0" cy="0" rx="55" ry="55" fill="none" stroke="url(#neon-green-grad)" stroke-width="7" />
+    <ellipse cx="0" cy="0" rx="55" ry="25" fill="none" stroke="url(#neon-green-grad)" stroke-width="5.5" />
+    <ellipse cx="0" cy="0" rx="25" ry="55" fill="none" stroke="url(#neon-green-grad)" stroke-width="5.5" />
+    <line x1="-55" y1="0" x2="55" y2="0" stroke="url(#neon-green-grad)" stroke-width="5.5" />
+    <line x1="0" y1="-55" x2="0" y2="55" stroke="url(#neon-green-grad)" stroke-width="5.5" />
+    
+    <!-- Diagonal mesh lines -->
+    <line x1="-38" y1="-38" x2="38" y2="38" stroke="url(#neon-green-grad)" stroke-width="4.5" />
+    <line x1="-38" y1="38" x2="38" y2="-38" stroke="url(#neon-green-grad)" stroke-width="4.5" />
+
+    <!-- 3D Nodes -->
+    <g fill="#4ade80" stroke="#ffffff" stroke-width="1.5">
+      <circle cx="0" cy="0" r="7" />
+      <circle cx="-55" cy="0" r="6" />
+      <circle cx="55" cy="0" r="6" />
+      <circle cx="0" cy="-55" r="6" />
+      <circle cx="0" cy="55" r="6" />
+      <circle cx="-38" cy="-38" r="6" />
+      <circle cx="38" cy="-38" r="6" />
+      <circle cx="-38" cy="38" r="6" />
+      <circle cx="38" cy="38" r="6" />
+      <circle cx="-25" cy="0" r="5" />
+      <circle cx="25" cy="0" r="5" />
+      <circle cx="0" cy="-25" r="5" />
+      <circle cx="0" cy="25" r="5" />
+    </g>
+  </g>
+
+  <!-- 3D Embossed Text with White Glow Outlines -->
+  <text x="250" y="345" text-anchor="middle" class="title-3d">WAISTBAND HUB LTD</text>
+  <text x="250" y="395" text-anchor="middle" class="sub-3d">FAST &amp; RELIABLE INTERNET</text>
+</svg>
